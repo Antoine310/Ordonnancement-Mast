@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2 LIFELINEID_3 LIFELINEID_4 LIFELINEID_5 LIFELINEID_6 LIFELINEID_7"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="-" text="pAlimentation
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="-" text="pRetrait
+(2)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="PROCESS_START" color="-" text="pSuperviseur
+(3)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="PROCESS_START" color="-" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM2" identifier="COND1" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND1" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM2" identifier="COND2" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND2" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4 LIFELINEID_3" event_type="PROCESS_CREATION" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55" identifier="_LINK_42"/>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="PROCESS_START" color="-" text="pMachine
+(4)" text_size="0 -" background="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5 LIFELINEID_3" event_type="PROCESS_CREATION" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55" identifier="_LINK_43"/>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="PROCESS_START" color="-" text="pMachine
+(5)" text_size="0 -" background="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6 LIFELINEID_3" event_type="PROCESS_CREATION" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55" identifier="_LINK_44"/>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="PROCESS_START" color="-" text="pMachine
+(6)" text_size="0 -" background="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM55"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM51" identifier="COND3" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND3" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM51"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2" identifier="COND4" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND4" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2" identifier="COND5" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND5" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2" identifier="COND6" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND6" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=1|})" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=2|})" identifier="MSG2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=1|})" identifier="MSG3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=3|})" identifier="MSG4"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM38" identifier="MSG1" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM79" identifier="MSG5" text="sDepotA(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM80" identifier="MSG6" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(20)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM81"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82" identifier="COND7" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND7" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG2" text="sNouvellePiece(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=2|})" identifier="MSG7"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG3" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=1|})" identifier="MSG8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG4" text="sNouvellePiece(|{param1|=3|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=3|})" identifier="MSG9"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM6" identifier="MSG5" text="sDepotA(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM7" identifier="MSG10" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8" identifier="COND8" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND8" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM36" identifier="MSG6" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37" identifier="COND9" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND9" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM31" identifier="MSG10" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM32" identifier="MSG11" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_START" color="-" text="timeMachine(5)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM44"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_START" color="-" text="panneTime(500)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM46"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34" identifier="COND10" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND10" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM33" identifier="MSG11" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM59"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36" identifier="COND11" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND11" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM38" identifier="MSG7" text="sNouvellePiece(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM79" identifier="MSG12" text="sDepotA(|{param1|=5|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM80" identifier="MSG13" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(20)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM81"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82" identifier="COND12" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND12" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG8" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=1|})" identifier="MSG14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG9" text="sNouvellePiece(|{param1|=3|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=3|})" identifier="MSG15"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM6" identifier="MSG12" text="sDepotA(|{param1|=5|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM7" identifier="MSG16" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8" identifier="COND13" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND13" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM36" identifier="MSG13" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37" identifier="COND14" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND14" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM31" identifier="MSG16" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM32" identifier="MSG17" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="TIMER_START" color="-" text="timeMachine(5)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM44"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="TIMER_START" color="-" text="panneTime(500)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM46"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34" identifier="COND15" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND15" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM33" identifier="MSG17" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM59"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36" identifier="COND16" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND16" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM38" identifier="MSG14" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM83" identifier="COND17" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND17" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM83"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM38" identifier="MSG15" text="sNouvellePiece(|{param1|=3|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM79" identifier="MSG18" text="sDepotA(|{param1|=6|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM80" identifier="MSG19" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(20)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM81"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82" identifier="COND18" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND18" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM6" identifier="MSG18" text="sDepotA(|{param1|=6|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM7" identifier="MSG20" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8" identifier="COND19" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND19" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM36" identifier="MSG19" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37" identifier="COND20" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND20" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM31" identifier="MSG20" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM32" identifier="MSG21" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="TIMER_START" color="-" text="timeMachine(5)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM44"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="TIMER_START" color="-" text="panneTime(500)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM46"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34" identifier="COND21" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND21" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM33" identifier="MSG21" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM59"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36" identifier="COND22" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND22" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_TIMEOUT" color="-" text="timeMachine" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM39"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_CANCEL" color="-" text="panneTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM40" identifier="MSG22" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41" identifier="COND23" background="-" text="Ended"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ended" identifier="COND23" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM39" identifier="MSG22" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM43" identifier="MSG23" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM44" identifier="MSG24" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(30)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM63"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM107" identifier="MSG25" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45" identifier="COND24" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND24" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM27" identifier="MSG23" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM28" identifier="MSG26" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29" identifier="COND25" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND25" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM11" identifier="MSG24" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13" identifier="COND26" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND26" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73" identifier="MSG25" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SAVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM73"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="sNouvellePiece(|{param1|=1|})" identifier="MSG27"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM8" identifier="MSG26" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM9" identifier="MSG28" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14" identifier="COND27" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND27" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM34" identifier="MSG28" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM62"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35" identifier="COND28" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND28" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM38" identifier="MSG27" text="sNouvellePiece(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM79" identifier="MSG29" text="sDepotA(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM80" identifier="MSG30" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(20)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM81"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82" identifier="COND29" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND29" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM82"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM6" identifier="MSG29" text="sDepotA(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM7" identifier="MSG31" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8" identifier="COND30" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND30" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pAlimentation.rdd*SYM8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM36" identifier="MSG30" text="sPreparer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37" identifier="COND31" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND31" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM37"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM31" identifier="MSG31" text="sPiece1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM32" identifier="MSG32" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_START" color="-" text="timeMachine(5)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM44"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_START" color="-" text="panneTime(500)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM46"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34" identifier="COND32" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND32" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM34"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM33" identifier="MSG32" text="sLiberer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM59"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36" identifier="COND33" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND33" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM36"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="TIMER_TIMEOUT" color="-" text="timeMachine" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM39"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="TIMER_CANCEL" color="-" text="panneTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM40" identifier="MSG33" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41" identifier="COND34" background="-" text="Ended"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ended" identifier="COND34" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM39" identifier="MSG33" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM43" identifier="MSG34" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM44" identifier="MSG35" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(30)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM63"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45" identifier="COND35" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND35" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM27" identifier="MSG34" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM28" identifier="MSG36" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29" identifier="COND36" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND36" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM11" identifier="MSG35" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13" identifier="COND37" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND37" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM8" identifier="MSG36" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM9" identifier="MSG37" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14" identifier="COND38" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND38" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM34" identifier="MSG37" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM62"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35" identifier="COND39" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND39" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="TIMER_TIMEOUT" color="-" text="timeMachine" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM39"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="TIMER_CANCEL" color="-" text="panneTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM40" identifier="MSG38" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41" identifier="COND40" background="-" text="Ended"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ended" identifier="COND40" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM39" identifier="MSG38" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM43" identifier="MSG39" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM44" identifier="MSG40" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(30)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM63"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45" identifier="COND41" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND41" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM27" identifier="MSG39" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM28" identifier="MSG41" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29" identifier="COND42" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND42" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM11" identifier="MSG40" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13" identifier="COND43" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND43" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM8" identifier="MSG41" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM9" identifier="MSG42" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14" identifier="COND44" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND44" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM34" identifier="MSG42" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM62"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="5"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35" identifier="COND45" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND45" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_TIMEOUT" color="-" text="timeMachine" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM39"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="TIMER_CANCEL" color="-" text="panneTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM40" identifier="MSG43" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41" identifier="COND46" background="-" text="Ended"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ended" identifier="COND46" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM41"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM39" identifier="MSG43" text="sRenduMachine"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM43" identifier="MSG44" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM44" identifier="MSG45" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_START" color="-" text="receptionPieceTime(30)" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM63"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45" identifier="COND47" background="-" text="Busy"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Busy" identifier="COND47" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM45"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM27" identifier="MSG44" text="sDepotM"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM28" identifier="MSG46" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29" identifier="COND48" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND48" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pMachine.rdd*SYM29"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM11" identifier="MSG45" text="sRetirer"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13" identifier="COND49" background="-" text="Pret"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Pret" identifier="COND49" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM13"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM8" identifier="MSG46" text="sPiece2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM9" identifier="MSG47" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14" identifier="COND50" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND50" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pRetrait.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM34" identifier="MSG47" text="sRenduRetrait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="TIMER_CANCEL" color="-" text="receptionPieceTime" type="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM62"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35" identifier="COND51" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="10"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND51" model_id="PragmaDevStudio:symbol*/nfs/home/camsi6/Documents/DevelopBackUp/pSuperviseur.rdd*SYM35"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>

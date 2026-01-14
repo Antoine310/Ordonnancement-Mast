@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM30" type="sdlText" text="dcl
+  machineRecue typeMachine;
+dcl
+  index  Integer := 1,
+  pMachines pMachineArray;
+ dcl id_machine PID;
+
+NEWTYPE IntTab
+  Array(PID,Integer);
+ENDNEWTYPE;
+dcl PIDmachineToInt IntTab;
+dcl Tab IntTab;
+dcl nbPiece IntTab;
+
+TIMER receptionPieceTime;" outline_color="-" background_color="-" center_coordinates="1170 637" dimensions="208 244" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="1071 46">
+<SdlFSMSymbol identifier="SYM4" type="sdlStart" outline_color="-" background_color="-" center_coordinates="1207 61" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM46" type="sdlCnctrIn" text="loop" outline_color="-" background_color="-" center_coordinates="1207 108" dimensions="110 40" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM47" type="sdlDecision" text="index" outline_color="-" background_color="-" center_coordinates="1207 160" dimensions="60 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM48" type="sdlAnswer" text="&lt;= NB_MACHINE" outline_color="-" background_color="-" center_coordinates="1207 212" dimensions="110 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM55" type="sdlPrcsCreation" text="pMachine" outline_color="-" background_color="-" center_coordinates="1207 264" dimensions="76 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM53" type="sdlTask" text="Tab(index) := 0;
+pMachines(index) := offspring;
+PIDmachineToInt(offspring) := index;
+Tab(offspring) := 0;
+nbPiece(offspring) := 0;
+index := index + 1;" outline_color="-" background_color="-" center_coordinates="1207 351" dimensions="272 110" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM54" type="sdlCnctrOut" text="loop" outline_color="-" background_color="-" center_coordinates="1207 438" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM49" type="sdlAnswer" text="else" outline_color="-" background_color="-" center_coordinates="1383 212" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM51" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="1383 264" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</NonStateTransition>
+<StateTransitionBlock top_left_coordinates="56 664">
+<SdlFSMSymbol identifier="SYM32" type="sdlState" text="Busy" outline_color="-" background_color="-" center_coordinates="159 684" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM33" type="sdlInputSig" text="sLiberer" outline_color="-" background_color="-" center_coordinates="159 736" dimensions="76 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM59" type="sdlResetTimer" text="reset(receptionPieceTime)" outline_color="-" background_color="-" center_coordinates="159 788" dimensions="206 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM36" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="159 840" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM34" type="sdlInputSig" text="sRenduRetrait" outline_color="-" background_color="-" center_coordinates="375 736" dimensions="110 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM62" type="sdlResetTimer" text="reset(receptionPieceTime)" outline_color="-" background_color="-" center_coordinates="375 788" dimensions="206 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM35" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="375 840" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM60" type="sdlInputSig" text="receptionPieceTime" outline_color="-" background_color="-" center_coordinates="561 736" dimensions="146 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM61" type="sdlState" text="Defaillance" outline_color="-" background_color="-" center_coordinates="561 788" dimensions="96 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<SaveTransition>
+<SdlFSMSymbol identifier="SYM70" type="sdlSaveSig" text="sRenduMachine" outline_color="-" background_color="-" center_coordinates="699 736" dimensions="110 40" attached_symbol_id=""/>
+</SaveTransition>
+<SaveTransition>
+<SdlFSMSymbol identifier="SYM72" type="sdlSaveSig" text="sPanne" outline_color="-" background_color="-" center_coordinates="795 736" dimensions="62 40" attached_symbol_id=""/>
+</SaveTransition>
+<SaveTransition>
+<SdlFSMSymbol identifier="SYM73" type="sdlSaveSig" text="sNouvellePiece" outline_color="-" background_color="-" center_coordinates="895 736" dimensions="118 40" attached_symbol_id=""/>
+</SaveTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="64 43">
+<SdlFSMSymbol identifier="SYM37" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="238 63" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM38" type="sdlInputSig" text="sNouvellePiece(machineRecue)" outline_color="-" background_color="-" center_coordinates="238 115" dimensions="216 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM99" type="sdlTask" text="id_machine := pMachines(machineRecue);
+nbPiece(id_machine) := nbPiece(id_machine) + 1;" outline_color="-" background_color="-" center_coordinates="238 172" dimensions="348 50" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM74" type="sdlDecision" text="Tab(id_machine) = 0" outline_color="-" background_color="-" center_coordinates="238 229" dimensions="152 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM75" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="238 281" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM87" type="sdlTask" text="Tab(id_machine) := 1" outline_color="-" background_color="-" center_coordinates="238 333" dimensions="160 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM80" type="sdlSendSig" text="sPreparer TO id_machine" outline_color="-" background_color="-" center_coordinates="238 385" dimensions="180 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM79" type="sdlSendSig" text="sDepotA(id_machine)" outline_color="-" background_color="-" center_coordinates="238 437" dimensions="152 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM81" type="sdlInitTimer" text="SET(now + 20, receptionPieceTime)" outline_color="-" background_color="-" center_coordinates="238 489" dimensions="262 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM82" type="sdlState" text="Busy" outline_color="-" background_color="-" center_coordinates="238 541" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM76" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="409 281" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM83" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="409 333" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM39" type="sdlInputSig" text="sRenduMachine" outline_color="-" background_color="-" center_coordinates="595 115" dimensions="110 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM44" type="sdlSendSig" text="sRetirer" outline_color="-" background_color="-" center_coordinates="595 167" dimensions="76 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM43" type="sdlSendSig" text="sDepotM to SENDER" outline_color="-" background_color="-" center_coordinates="595 219" dimensions="138 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM63" type="sdlInitTimer" text="SET(now + 30,receptionPieceTime)" outline_color="-" background_color="-" center_coordinates="595 271" dimensions="256 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM84" type="sdlTask" text="Tab(SENDER) := 0;
+nbPiece(SENDER) := nbPiece(SENDER) - 1;" outline_color="-" background_color="-" center_coordinates="595 328" dimensions="292 50" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM104" type="sdlDecision" text="nbPiece(SENDER)" outline_color="-" background_color="-" center_coordinates="595 385" dimensions="124 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM105" type="sdlAnswer" text="&gt;= 1" outline_color="-" background_color="-" center_coordinates="595 437" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM108" type="sdlTask" text="nbPiece(SENDER) := nbPiece(SENDER) - 1;" outline_color="-" background_color="-" center_coordinates="595 489" dimensions="292 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM107" type="sdlSendSig" text="sNouvellePiece(PIDmachineToInt(SENDER))" outline_color="-" background_color="-" center_coordinates="595 541" dimensions="292 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM106" type="sdlAnswer" text="else" outline_color="-" background_color="-" center_coordinates="781 437" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+<SdlFSMSymbol identifier="SYM45" type="sdlState" text="Busy" outline_color="-" background_color="-" center_coordinates="595 605" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM64" type="sdlInputSig" text="sPanne" outline_color="-" background_color="-" center_coordinates="887 115" dimensions="62 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM65" type="sdlSendSig" text="sPanneOp(SENDER)" outline_color="-" background_color="-" center_coordinates="887 167" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM66" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="887 219" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>

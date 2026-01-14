@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM42" type="sdlText" text="TIMER timeMachine;
+TIMER panneTime;" outline_color="-" background_color="-" center_coordinates="193 328" dimensions="152 56" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="66 90">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="96 105" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM2" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="96 152" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NonStateTransition>
+<StateTransitionBlock top_left_coordinates="958 75">
+<SdlFSMSymbol identifier="SYM26" type="sdlState" text="Ended" outline_color="-" background_color="-" center_coordinates="992 95" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM27" type="sdlInputSig" text="sDepotM" outline_color="-" background_color="-" center_coordinates="992 147" dimensions="68 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM28" type="sdlSendSig" text="sPiece2" outline_color="-" background_color="-" center_coordinates="992 199" dimensions="68 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM29" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="992 251" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="387 64">
+<SdlFSMSymbol identifier="SYM30" type="sdlState" text="Pret" outline_color="-" background_color="-" center_coordinates="490 84" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM31" type="sdlInputSig" text="sPiece1" outline_color="-" background_color="-" center_coordinates="490 136" dimensions="68 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM32" type="sdlSendSig" text="sLiberer" outline_color="-" background_color="-" center_coordinates="490 188" dimensions="76 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM44" type="sdlInitTimer" text="SET(now + 5,timeMachine)" outline_color="-" background_color="-" center_coordinates="490 240" dimensions="200 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM46" type="sdlInitTimer" text="SET(now + 500, panneTime)" outline_color="-" background_color="-" center_coordinates="490 292" dimensions="206 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM34" type="sdlState" text="Pret" outline_color="-" background_color="-" center_coordinates="490 344" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM39" type="sdlInputSig" text="timeMachine" outline_color="-" background_color="-" center_coordinates="675 136" dimensions="96 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM50" type="sdlResetTimer" text="reset(panneTime)" outline_color="-" background_color="-" center_coordinates="675 188" dimensions="144 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM40" type="sdlSendSig" text="sRenduMachine" outline_color="-" background_color="-" center_coordinates="675 240" dimensions="110 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM41" type="sdlState" text="Ended" outline_color="-" background_color="-" center_coordinates="675 292" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM47" type="sdlInputSig" text="panneTime" outline_color="-" background_color="-" center_coordinates="836 136" dimensions="82 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM51" type="sdlResetTimer" text="reset(timeMachine)" outline_color="-" background_color="-" center_coordinates="836 188" dimensions="158 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM48" type="sdlSendSig" text="sPanne" outline_color="-" background_color="-" center_coordinates="836 240" dimensions="62 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM49" type="sdlState" text="Panne" outline_color="-" background_color="-" center_coordinates="836 292" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="234 102">
+<SdlFSMSymbol identifier="SYM35" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="275 122" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM36" type="sdlInputSig" text="sPreparer" outline_color="-" background_color="-" center_coordinates="275 174" dimensions="82 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM37" type="sdlState" text="Pret" outline_color="-" background_color="-" center_coordinates="275 226" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>
