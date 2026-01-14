@@ -1,0 +1,273 @@
+
+-- Processing Resources
+
+Processing_Resource (
+	Type 			=> Fixed_Priority_Processor,
+	Name 			=> CPU_1,
+        Worst_Context_Switch 	=> 0.00);
+
+-- Scheduling Servers
+
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> T1Task,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 4,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> T2Task,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 3,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> T3Task,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 2,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> T4Task,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 1,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+
+
+-- Resources
+
+Shared_Resource (
+	Type 	=> Priority_Inheritance_Resource,
+	Name 	=> R1);
+Shared_Resource (
+	Type 	=> Priority_Inheritance_Resource,
+	Name 	=> R2);
+Shared_Resource (
+	Type 	=> Priority_Inheritance_Resource,
+	Name 	=> R3);
+Shared_Resource (
+	Type 	=> Priority_Inheritance_Resource,
+	Name 	=> R4);
+
+-- Operations
+
+-- Critical Sections
+
+-- Operations TP1 
+
+Operation (
+   Type => Simple,
+   Name => TP1_Op1,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R1));
+
+Operation (
+   Type => Simple,
+   Name => TP1_Op2,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R1, R2));
+
+Operation (
+   Type => Simple,
+   Name => TP1_Op3,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R3, R4));
+
+Operation (
+   Type => Enclosing,
+   Name => TP1_code,
+   Composite_Operation_List => (TP1_Op1, TP1_Op2, TP1_Op3));
+
+-- Operations TP2
+
+Operation (
+   Type => Simple,
+   Name => TP2_Op1,
+   Worst_Case_Execution_Time => 2,
+   Shared_Resources_List => (R4,R1));
+
+Operation (
+   Type => Simple,
+   Name => TP2_Op2,
+   Worst_Case_Execution_Time => 2,
+   Shared_Resources_List => (R1));
+
+Operation (
+   Type => Enclosing,
+   Name => TP2_code,
+   Composite_Operation_List => (TP2_Op1, TP2_Op2));
+
+-- Operations TP3
+
+Operation (
+   Type => Simple,
+   Name => TP3_Op1,
+   Worst_Case_Execution_Time => 3,
+   Shared_Resources_List => (R3));
+
+Operation (
+   Type => Simple,
+   Name => TP3_Op2,
+   Worst_Case_Execution_Time => 2,
+   Shared_Resources_List => (R4, R2));
+
+Operation (
+   Type => Simple,
+   Name => TP3_Op2b,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R2));
+
+Operation (
+   Type => Simple,
+   Name => TP3_Op3,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R3, R4));
+
+Operation (
+   Type => Simple,
+   Name => TP3_Op3b,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R4));
+
+
+Operation (
+   Type => Enclosing,
+   Name => TP3_code,
+   Composite_Operation_List => (TP3_Op1, TP3_Op2, TP3_Op2b , TP3_Op3, TP3_Op3b));
+
+
+-- Operations TP4
+
+Operation (
+   Type => Simple,
+   Name => TP4_Op1,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R2));
+
+Operation (
+   Type => Simple,
+   Name => TP4_Op2,
+   Worst_Case_Execution_Time => 2,
+   Shared_Resources_List => (R1, R2,R3));
+
+Operation (
+   Type => Simple,
+   Name => TP4_Op3,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R3, R4));
+
+Operation (
+   Type => Simple,
+   Name => TP4_Op3b,
+   Worst_Case_Execution_Time => 1,
+   Shared_Resources_List => (R4));
+
+
+Operation (
+   Type => Enclosing,
+   Name => TP4_code,
+   Composite_Operation_List => (TP4_Op1, TP4_Op2, TP4_Op3, TP4_Op3b));
+
+
+-- Transactions
+
+Transaction (
+	Type => Regular,
+	Name => Transaction1,
+	External_Events => (
+		(Type 	=> Periodic,
+		 Name 	=> T1,
+		 Period => 20,
+		Phase => 0)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O1,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 20,
+			 Referenced_Event => T1))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T1,
+		 Output_Event 	    => O1,
+		 Activity_Operation => TP1_code,
+		 Activity_Server    => T1Task)));
+
+Transaction (
+	Type	=> Regular,
+	Name	=> Transaction2,
+	External_Events => (
+		(Type   => Periodic,
+		 Name   => T2,
+		 Period => 30,
+		Phase => 2)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O2,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 30,
+			 Referenced_Event => T2))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T2,
+		 Output_Event 	    => O2,
+		 Activity_Operation => TP2_code,
+		 Activity_Server    => T2Task)));
+
+Transaction (
+	Type => Regular,
+	Name => Transaction3,
+	External_Events => (
+		(Type 	=> Periodic,
+		 Name 	=> T3,
+		 Period => 40, 
+		Phase => 1)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O3,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 40,
+			 Referenced_Event => T3))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T3,
+		 Output_Event 	    => O3,
+		 Activity_Operation => TP3_code,
+		 Activity_Server    => T3Task)));
+
+Transaction (
+	Type => Regular,
+	Name => Transaction4,
+	External_Events => (
+		(Type => Periodic,
+		 Name => T4,
+		 Period => 50,
+		Phase => 0)),
+	Internal_Events => (
+		(Type => regular,
+		 name => O4,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 50,
+			 Referenced_Event => T4))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T4,
+		 Output_Event 	    => O4,
+		 Activity_Operation => TP4_code,
+		 Activity_Server    => T4Task)));

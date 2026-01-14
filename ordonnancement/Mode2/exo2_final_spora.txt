@@ -1,0 +1,238 @@
+Processing_Resource (
+   Type                   => Regular_Processor,
+   Name                   => cpu_1,
+   Max_Interrupt_Priority => 110,
+   Min_Interrupt_Priority => 101,
+   Worst_ISR_Switch       => 0.00,
+   Avg_ISR_Switch         => 0.00,
+   Best_ISR_Switch        => 0.00,
+   Speed_Factor           => 1.00);
+
+Scheduler (
+   Type   => Primary_Scheduler,
+   Name   => cpu_1,
+   Host   => cpu_1,
+   Policy =>
+      ( Type                 => Fixed_Priority,
+        Worst_Context_Switch => 0.00,
+        Avg_Context_Switch   => 0.00,
+        Best_Context_Switch  => 0.00,
+        Max_Priority         => 100,
+        Min_Priority         => 1));
+
+-- Periodic tasks (Fixed Priority servers)
+
+Scheduling_Server (
+   Type => Regular,
+   Name => T1Task,
+   Server_Sched_Parameters =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 50,
+        Preassigned  => NO),
+   Scheduler => cpu_1);
+
+Scheduling_Server (
+   Type => Regular,
+   Name => T2Task,
+   Server_Sched_Parameters =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 10,
+        Preassigned  => NO),
+   Scheduler => cpu_1);
+
+Scheduling_Server (
+   Type => Regular,
+   Name => T3Task,
+   Server_Sched_Parameters =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 40,
+        Preassigned  => NO),
+   Scheduler => cpu_1);
+
+Scheduling_Server (
+   Type => Regular,
+   Name => T4Task,
+   Server_Sched_Parameters =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 30,
+        Preassigned  => NO),
+   Scheduler => cpu_1);
+
+-- marche avec 2-16 ou 1-6  ( a la place de 4-16 , 2-6 ) 
+
+Scheduling_Server (
+   Type => Regular,
+   Name => TAperTask,
+   Server_Sched_Parameters =>
+      ( Type                       => Sporadic_Server_Policy,
+        Normal_Priority            => 20,
+        Preassigned                => NO,
+        Background_Priority        => 1,
+        Initial_Capacity           => 4.0,
+        Replenishment_Period       => 16.0,
+        Max_Pending_Replenishments => 1),
+   Scheduler => cpu_1);
+
+-- Task operations
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op1,
+	Worst_Case_Execution_Time => 2);
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op2,
+	Worst_Case_Execution_Time => 2);
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op3,
+	Worst_Case_Execution_Time => 1);
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op4,
+	Worst_Case_Execution_Time => 1);
+
+Operation (
+	Type					  => Simple,
+	Name					  => OpAper1,
+	Worst_Case_Execution_Time => 2);
+
+Operation (
+	Type					  => Simple,
+	Name					  => OpAper2,
+	Worst_Case_Execution_Time => 2);
+
+-- Transactions
+
+Transaction (
+	Type => Regular,
+	Name => Transaction1,
+	External_Events => (
+		(Type 	=> Periodic,
+		 Name 	=> T1,
+		 Period => 8)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O1,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 8,
+			 Referenced_Event => T1))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T1,
+		 Output_Event 	    => O1,
+		 Activity_Operation => Op1,
+		 Activity_Server    => T1Task)));
+
+Transaction (
+	Type	=> Regular,
+	Name	=> Transaction2,
+	External_Events => (
+		(Type   => Periodic,
+		 Name   => T2,
+		 Period => 16)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O2,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 16,
+			 Referenced_Event => T2))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T2,
+		 Output_Event 	    => O2,
+		 Activity_Operation => Op2,
+		 Activity_Server    => T2Task)));
+
+Transaction (
+	Type => Regular,
+	Name => Transaction3,
+	External_Events => (
+		(Type 	=> Periodic,
+		 Name 	=> T3,
+		 Period => 8)),
+	Internal_Events => (
+		(Type 	=> regular,
+		 name 	=> O3,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 8,
+			 Referenced_Event => T3))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T3,
+		 Output_Event 	    => O3,
+		 Activity_Operation => Op3,
+		 Activity_Server    => T3Task)));
+
+Transaction (
+	Type => Regular,
+	Name => Transaction4,
+	External_Events => (
+		(Type => Periodic,
+		 Name => T4,
+		 Period => 8)),
+	Internal_Events => (
+		(Type => regular,
+		 name => O4,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 8,
+			 Referenced_Event => T4))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => T4,
+		 Output_Event 	    => O4,
+		 Activity_Operation => Op4,
+		 Activity_Server    => T4Task)));
+
+
+
+--SporadicTransac
+
+Transaction (
+	Type => Regular,
+	Name => TransactionAperiodic1,
+	External_Events => (
+		(Type => Sporadic,
+		 Name => TAper1,
+		 Min_Interarrival => 32)), 
+	Internal_Events => (
+		(Type => regular,
+		 name => O5,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 32,
+			 Referenced_Event => TAper1))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => TAper1,
+		 Output_Event 	    => O5,
+		 Activity_Operation => OpAper1,
+		 Activity_Server    => TAperTask)));
+
+Transaction (
+	Type => Regular,
+	Name => TransactionAperiodic2,
+	External_Events => (
+		(Type => Sporadic,
+		 Name => TAper2,
+		 Min_Interarrival => 32)), 
+	Internal_Events => (
+		(Type => regular,
+		 name => O6,
+                 Timing_Requirements => (
+			 Type 		  => Hard_Global_Deadline,
+			 Deadline 	  => 32,
+			 Referenced_Event => TAper2))),
+	Event_Handlers => (
+		(Type 		    => Activity,
+		 Input_Event 	    => TAper2,
+		 Output_Event 	    => O6,
+		 Activity_Operation => OpAper2,
+		 Activity_Server    => TAperTask)));

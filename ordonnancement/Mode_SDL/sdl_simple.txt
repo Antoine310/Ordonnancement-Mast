@@ -1,0 +1,372 @@
+
+-- Processing Resources
+
+Processing_Resource (
+	Type 			=> Fixed_Priority_Processor,
+	Name 			=> CPU_1,
+        Worst_Context_Switch 	=> 0.00);
+
+-- Scheduling Servers
+
+
+-- Superviseur
+
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> superviseur,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 5,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+-- Robot d'alimentation 
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> rAlim,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 4,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+-- Robot de retrait 
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> rRet,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 4,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+-- Machines * 3 
+-- M1
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> m1,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 3,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+-- M2
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> m2,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 3,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+-- M3
+Scheduling_Server (
+	Type				=> Fixed_Priority,
+	Name 				=> m3,
+	Server_Sched_Parameters		=> (
+		Type		=> Fixed_Priority_policy,
+		The_Priority		=> 3,
+                Preassigned             => No),
+	Server_Processing_Resource	=> CPU_1);
+
+-- Task operations
+
+--  in/out+ traitement => Opération 
+-- reception et traitement de l'arrive d'une piece (superviseur) 
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op1_out,
+	Worst_Case_Execution_Time => 1);
+
+
+-- robot d'alimentation : placement de la piece
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op2_out,
+	Worst_Case_Execution_Time => 0.5);
+
+
+-- Machines : in + usinage
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op3_out,
+	Worst_Case_Execution_Time => 0.5);
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op3_trait,
+	Worst_Case_Execution_Time => 2);
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op4_out,
+	Worst_Case_Execution_Time => 0.5);
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op4_trait,
+	Worst_Case_Execution_Time => 2);
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op5_out,
+	Worst_Case_Execution_Time => 0.5);
+
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op5_trait,
+	Worst_Case_Execution_Time => 2);
+
+
+-- robot de retrait : retrait de la piece
+Operation (
+	Type 	                  => Simple,
+	Name 	                  => Op6_out,
+	Worst_Case_Execution_Time => 0.5);
+
+
+-- Transactions
+
+-- Transaction => série des actions avec l'arrivée d'une piece
+
+Transaction (
+	Type => Regular,
+	Name => Transaction1,
+   External_Events => (
+      (Type => Periodic,
+       Name => newPiece_M1,
+       Period => 40)),
+
+	-- Convoyeur
+
+   Internal_Events => (
+      (Type => Regular, 
+	Name => o1_m1,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 40,
+          Referenced_Event => newPiece_M1)),
+
+      	-- Robot d'alimentation : <= 30 s
+
+      (Type => Regular, Name => o2_m1,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M1)),
+
+      	-- Machine retire la piece : <= 20 s
+      (Type => Regular, Name => o3_m1,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 20,
+          Referenced_Event => newPiece_M1)),
+
+      	-- Usinage : <= 5 min
+      (Type => Regular, Name => o4_m1,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 300,
+          Referenced_Event => newPiece_M1)),
+
+      	-- Robot de retrait : <= 30 s
+      (Type => Regular, Name => o5_m1,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M1))
+   ),
+   -- cheminement piece
+   Event_Handlers => (
+      (Type => Activity,
+       Input_Event =>newPiece_M1,
+       Output_Event => o1_m1,
+       Activity_Operation => Op1_out,
+       Activity_Server => superviseur),
+
+      (Type => Activity,
+       Input_Event => o1_m1,
+       Output_Event => o2_m1,
+       Activity_Operation => Op2_out,
+       Activity_Server => rAlim),
+
+      (Type => Activity,
+       Input_Event => o2_m1,
+       Output_Event => o3_m1,
+       Activity_Operation => Op3_out,
+       Activity_Server => m1),
+
+      (Type => Activity,
+       Input_Event => o3_m1,
+       Output_Event => o4_m1,
+       Activity_Operation => Op3_trait,
+       Activity_Server => m1),
+
+      (Type => Activity,
+       Input_Event => o4_m1,
+       Output_Event => o5_m1,
+       Activity_Operation => Op6_out,
+       Activity_Server => rRet)
+   )
+);
+
+Transaction (
+	Type => Regular,
+	Name => Transaction2,
+   External_Events => (
+      (Type => Periodic,
+       Name => newPiece_M2,
+       Period => 40)),
+
+	-- Convoyeur
+
+   Internal_Events => (
+      (Type => Regular, 
+	Name => o1_m2,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 40,
+          Referenced_Event => newPiece_M2)),
+
+      	-- Robot d'alimentation : <= 30 s
+
+      (Type => Regular, Name => o2_m2,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M2)),
+
+      	-- Machine retire la piece : <= 20 s
+      (Type => Regular, Name => o3_m2,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 20,
+          Referenced_Event => newPiece_M2)),
+
+      	-- Usinage : <= 5 min
+      (Type => Regular, Name => o4_m2,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 300,
+          Referenced_Event => newPiece_M2)),
+
+      	-- Robot de retrait : <= 30 s
+      (Type => Regular, Name => o5_m2,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M2))
+   ),
+   -- cheminement piece
+   Event_Handlers => (
+      (Type => Activity,
+       Input_Event =>newPiece_M2,
+       Output_Event => o1_m2,
+       Activity_Operation => Op1_out,
+       Activity_Server => superviseur),
+
+      (Type => Activity,
+       Input_Event => o1_m2,
+       Output_Event => o2_m2,
+       Activity_Operation => Op2_out,
+       Activity_Server => rAlim),
+
+      (Type => Activity,
+       Input_Event => o2_m2,
+       Output_Event => o3_m2,
+       Activity_Operation => Op4_out,
+       Activity_Server => m2),
+
+      (Type => Activity,
+       Input_Event => o3_m2,
+       Output_Event => o4_m2,
+       Activity_Operation => Op4_trait,
+       Activity_Server => m2),
+
+      (Type => Activity,
+       Input_Event => o4_m2,
+       Output_Event => o5_m2,
+       Activity_Operation => Op6_out,
+       Activity_Server => rRet)
+   )
+);
+
+Transaction (
+	Type => Regular,
+	Name => Transaction3,
+   External_Events => (
+      (Type => Periodic,
+       Name => newPiece_M3,
+       Period => 40)),
+
+	-- Convoyeur
+
+   Internal_Events => (
+      (Type => Regular, 
+	Name => o1_m3,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 40,
+          Referenced_Event => newPiece_M3)),
+
+      	-- Robot d'alimentation : <= 30 s
+
+      (Type => Regular, Name => o2_m3,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M3)),
+
+      	-- Machine retire la piece : <= 20 s
+      (Type => Regular, Name => o3_m3,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 20,
+          Referenced_Event => newPiece_M3)),
+
+      	-- Usinage : <= 5 min
+      (Type => Regular, Name => o4_m3,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 300,
+          Referenced_Event => newPiece_M3)),
+
+      	-- Robot de retrait : <= 30 s
+      (Type => Regular, Name => o5_m3,
+       Timing_Requirements => (
+          Type => Hard_Global_Deadline,
+          Deadline => 30,
+          Referenced_Event => newPiece_M3))
+   ),
+   -- cheminement piece
+   Event_Handlers => (
+      (Type => Activity,
+       Input_Event =>newPiece_M3,
+       Output_Event => o1_m3,
+       Activity_Operation => Op1_out,
+       Activity_Server => superviseur),
+
+      (Type => Activity,
+       Input_Event => o1_m3,
+       Output_Event => o2_m3,
+       Activity_Operation => Op2_out,
+       Activity_Server => rAlim),
+
+      (Type => Activity,
+       Input_Event => o2_m3,
+       Output_Event => o3_m3,
+       Activity_Operation => Op5_out,
+       Activity_Server => m3),
+
+      (Type => Activity,
+       Input_Event => o3_m3,
+       Output_Event => o4_m3,
+       Activity_Operation => Op5_trait,
+       Activity_Server => m3),
+
+      (Type => Activity,
+       Input_Event => o4_m3,
+       Output_Event => o5_m3,
+       Activity_Operation => Op6_out,
+       Activity_Server => rRet)
+   )
+);
